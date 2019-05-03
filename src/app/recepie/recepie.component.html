@@ -1,0 +1,19 @@
+<h3>I am recepie component</h3>
+<!-- <app-recepie-list></app-recepie-list>
+<app-recepie-details></app-recepie-details> -->
+
+<div class="row">
+  <div class="col-md-5">
+    <app-recepie-list ></app-recepie-list>
+  </div>
+  <div class="col-md-7">
+     <!-- <app-recepie-details *ngIf="selectedRecepie; else infoText"  [recepiedetailsSelected]="selectedRecepie" ></app-recepie-details>
+     <ng-template #infoText>
+       <p>
+         Please select a Recepie
+       </p>
+     </ng-template> -->
+
+     <router-outlet></router-outlet>
+  </div>
+</div>
