@@ -1,8 +1,8 @@
 import{Component}from '@angular/core';
 @Component({
   selector:'app-recepie-edit',
-  templateUrl:'./recepie-edit.Component.html',
-  styleUrls:['./recepie-details.component.css']
+  templateUrl:'./recepie-edit.component.html',
+  styleUrls:['./recepie-edit.component.css']
 })
 export class RecepieEditComponent{
 
