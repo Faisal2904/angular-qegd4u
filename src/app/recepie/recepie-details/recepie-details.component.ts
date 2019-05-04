@@ -1,7 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { Recepie } from '../recepie.model';
 import { RecepieService } from '../recepie.service';
-import{ActivatedRoute,Params} from'@angular/router';
+import{ActivatedRoute,Params,Router} from'@angular/router';
 @Component({
   selector: 'app-recepie-details',
   templateUrl: './recepie-details.component.html',
@@ -13,7 +13,7 @@ export class RecepieDetailsComponent implements OnInit {
 
  
 
-  constructor(private recepieService:RecepieService,private route:ActivatedRoute){
+  constructor(private recepieService:RecepieService,private route:ActivatedRoute,private router:Router){
 
   }
   ngOnInit(){
@@ -33,6 +33,12 @@ export class RecepieDetailsComponent implements OnInit {
   onAddtoShoppingList(){
 
     this.recepieService.addIngredienttoShoppingist(this.recepiedetailsSelected.ingredient)
+
+  }
+
+
+  navigatetoEditMode(){
+    this.router.navigate(['edit'],{relativeTo:this.route});
 
   }
 
