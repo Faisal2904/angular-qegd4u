@@ -7,7 +7,7 @@
 
     <hr>
    <ul class="list-group">
-           <a class="list-group-item" style="cursor:pointer" *ngFor="let x of ingredient">
+           <a class="list-group-item" style="cursor:pointer" *ngFor="let x of ingredient; let i=index" (click)="onEdit(i)">
              {{x.name}} {{x.amount}}
            </a>
             
