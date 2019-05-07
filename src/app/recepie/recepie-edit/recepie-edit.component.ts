@@ -62,13 +62,19 @@ export class RecepieEditComponent implements OnInit{
       'ingredients': recepieIngredient
     });
   }
+  onAddIngredient(){
+    (<FormArray>this.recepieForm.get('ingredients')).push( new FormGroup({
+            'name':new FormControl(),
+            "amount":new FormControl()
+          }))
+  }
 
   onSubmit(){
   
     console.log(this.recepieForm);
   }
   cancel(){
-     console.log("hello checking",this.recepieForm.get('ingredients').controls);
+    /// console.log("hello checking",this.recepieForm.get('ingredients').controls);
   }
 
 
