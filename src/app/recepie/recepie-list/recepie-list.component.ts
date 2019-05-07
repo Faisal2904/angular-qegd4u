@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component,OnInit,OnDestroy} from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
+import{Subscription}from 'rxjs/Subscription'
+
 
 import { Recepie } from '../recepie.model';
 import{RecepieService} from '../recepie.service'
@@ -9,12 +11,13 @@ import{RecepieService} from '../recepie.service'
   templateUrl: './recepie-list.component.html',
   styleUrls: [ './recepie-list.component.css' ]
 })
-export class RecepieListComponent  {
+export class RecepieListComponent implements OnInit,OnDestroy {
 
    
   // @Output() recepieSelectedReceived=new EventEmitter<{name:string, description:string , imagePath:string}>();
 
-  recepie:Recepie[]
+  recepie:Recepie[];
+  subscription:Subscription;
   
   
     // new Recepies('test recepie', 'this is simply a test','')];
@@ -26,6 +29,10 @@ export class RecepieListComponent  {
     this.recepie=this.recepieService.getRecepie()
     console.log("inrecepie-list" + this.recepie)
 
+this.subscription=this.recepieService.recepieChanged.subscribe(
+  (recepie:Recepie[])=>{this.recepie=recepie;
+  console.log("inside subscribe",recepie);}
+)
   }//inikt ends
 
   // recepieRecived(recepieSelected:Recepie){
@@ -39,5 +46,8 @@ export class RecepieListComponent  {
     console.log("in navigatetonew");
     this.router.navigate(['new'],{relativeTo:this.route});
 
+  }
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
   }
 }

@@ -70,6 +70,15 @@ export class RecepieEditComponent implements OnInit{
   }
 
   onSubmit(){
+    if(this.editMode){
+      console.log("update block");
+
+      this.recepieService.updateRecepies(this.id,this.recepieForm.value);
+    }
+    else{
+      console.log("add block");
+      this.recepieService.addRecepies(this.recepieForm.value);
+    }
   
     console.log(this.recepieForm);
   }
