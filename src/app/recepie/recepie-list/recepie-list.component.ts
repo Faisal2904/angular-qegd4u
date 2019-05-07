@@ -27,7 +27,9 @@ export class RecepieListComponent implements OnInit,OnDestroy {
 
   ngOnInit(){
     this.recepie=this.recepieService.getRecepie()
-    console.log("inrecepie-list" + this.recepie)
+    console.log("inrecepie-list" , this.recepie);
+    //console.log("service-list" , this.recepieService.recepie);
+
 
 this.subscription=this.recepieService.recepieChanged.subscribe(
   (recepie:Recepie[])=>{this.recepie=recepie;

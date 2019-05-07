@@ -2,6 +2,8 @@ import{Component,OnInit}from '@angular/core';
 import{ActivatedRoute,Params}from '@angular/router';
 import{FormGroup,FormControl,FormArray,Validators} from '@angular/forms'
 import{RecepieService} from '../recepie.service'
+import { Recepie } from '../recepie.model';
+
 
 @Component({
   selector:'app-recepie-edit',
@@ -70,14 +72,18 @@ export class RecepieEditComponent implements OnInit{
   }
 
   onSubmit(){
+    const recepi= new Recepie(this.recepieForm.value['name'],
+    this.recepieForm.value['imagePath'],
+    this.recepieForm.value['description'],
+    this.recepieForm.value['ingredients'])
     if(this.editMode){
       console.log("update block");
 
-      this.recepieService.updateRecepies(this.id,this.recepieForm.value);
+      this.recepieService.updateRecepies(this.id,recepi);
     }
     else{
       console.log("add block");
-      this.recepieService.addRecepies(this.recepieForm.value);
+      this.recepieService.addRecepies(recepi);
     }
   
     console.log(this.recepieForm);
