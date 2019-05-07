@@ -1,6 +1,6 @@
 import{Component,OnInit}from '@angular/core';
 import{ActivatedRoute,Params}from '@angular/router';
-import{FormGroup,FormControl,FormArray} from '@angular/forms'
+import{FormGroup,FormControl,FormArray,Validators} from '@angular/forms'
 import{RecepieService} from '../recepie.service'
 
 @Component({
@@ -56,9 +56,9 @@ export class RecepieEditComponent implements OnInit{
 
     }
     this.recepieForm=new FormGroup({
-      'name':new FormControl(recepiename),
-      'imagePath': new FormControl(imagePath),
-      'description':new FormControl(descrptn),
+      'name':new FormControl(recepiename,Validators.required),
+      'imagePath': new FormControl(imagePath,Validators.required),
+      'description':new FormControl(descrptn,Validators.required),
       'ingredients': recepieIngredient
     });
   }
