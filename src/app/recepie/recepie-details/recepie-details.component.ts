@@ -41,6 +41,10 @@ export class RecepieDetailsComponent implements OnInit {
     this.router.navigate(['edit'],{relativeTo:this.route});
 
   }
+  delete(){
+    console.log("indele1");
+    this.recepieService.deleteRecepie(this.id);
+  }
 
 
   

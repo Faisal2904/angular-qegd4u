@@ -51,6 +51,13 @@ export class RecepieService {
     this.recepieChanged.next(this.recepie.slice());
 
   }
+  deleteRecepie(index:number){
+    console.log("indele1");
+
+    this.recepie.splice(index,1);
+    this.recepieChanged.next(this.recepie.slice());
+
+  }
 
 
 

@@ -1,5 +1,5 @@
 import{Component,OnInit}from '@angular/core';
-import{ActivatedRoute,Params}from '@angular/router';
+import{ActivatedRoute,Params,Router}from '@angular/router';
 import{FormGroup,FormControl,FormArray,Validators} from '@angular/forms'
 import{RecepieService} from '../recepie.service'
 import { Recepie } from '../recepie.model';
@@ -15,7 +15,7 @@ export class RecepieEditComponent implements OnInit{
   editMode=false;
   recepieForm:FormGroup
 
-  constructor(private route: ActivatedRoute, private recepieService:RecepieService){}
+  constructor(private route: ActivatedRoute, private recepieService:RecepieService,private router:Router){}
 
   ngOnInit(){
     this.route.params.subscribe(
@@ -90,6 +90,7 @@ export class RecepieEditComponent implements OnInit{
     console.log(this.recepieForm);
   }
   cancel(){
+    this.router.navigate(['../',{relativeTo:this.route}]);
     /// console.log("hello checking",this.recepieForm.get('ingredients').controls);
   }
 
