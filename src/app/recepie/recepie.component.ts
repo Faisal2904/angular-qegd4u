@@ -4,8 +4,8 @@ import{RecepieService} from './recepie.service'
 @Component({
   selector: 'app-recepie',
   templateUrl: './recepie.component.html',
-  styleUrls: [ './recepie.component.css' ],
-  providers:[RecepieService]
+  styleUrls: [ './recepie.component.css' ]
+ // providers:[RecepieService]
 })
 export class RecepieComponent implements OnInit {
 

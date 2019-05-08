@@ -20,6 +20,8 @@ import {ShoppingListComponent} from './shopping-list/shopping-list.component';
 import {ShoppingEditComponent} from './shopping-list/shopping-edit/shopping-edit.component';
 import {DropdownDirective} from './shared/dropdown.directive';
 import{ShoppingService} from './shopping-list/shopping.service';
+import{RecepieService} from './recepie/recepie.service';
+
 import {AppRoutingModule} from './app-routing.module';
 
 
@@ -27,6 +29,6 @@ import {AppRoutingModule} from './app-routing.module';
   imports:      [ BrowserModule, FormsModule,AppRoutingModule,ReactiveFormsModule ],
   declarations: [ AppComponent, HelloComponent,HeaderComponent, RecepieComponent, RecepieListComponent, RecepieDetailsComponent ,RecepieItemComponent, ShoppingListComponent, ShoppingEditComponent,DropdownDirective,RecepieStartComponent,RecepieEditComponent],
   bootstrap:    [ AppComponent ],
-  providers:[ShoppingService]
+  providers:[ShoppingService,RecepieService]
 })
 export class AppModule { }

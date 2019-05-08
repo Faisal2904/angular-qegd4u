@@ -39,13 +39,14 @@ export class RecepieService {
 
   }
   updateRecepies(index: number, newRecepie: Recepie) {
-    console.log("updateRecepies callsed");
+    console.log("updateRecepies callsed",newRecepie);
 
     this.recepie[index] = newRecepie;
     this.recepieChanged.next(this.recepie.slice());
   }
 
   addIngredienttoShoppingist(ingredients: Ingredient[]) {
+  
     this.shoppingService.addIngredient(ingredients);
     this.recepieChanged.next(this.recepie.slice());
 

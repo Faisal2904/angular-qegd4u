@@ -72,9 +72,10 @@ export class RecepieEditComponent implements OnInit{
   }
 
   onSubmit(){
-    const recepi= new Recepie(this.recepieForm.value['name'],
-    this.recepieForm.value['imagePath'],
-    this.recepieForm.value['description'],
+    const recepi= new Recepie(
+      this.recepieForm.value['name'],
+       this.recepieForm.value['description'],
+     this.recepieForm.value['imagePath'],
     this.recepieForm.value['ingredients'])
     if(this.editMode){
       console.log("update block");
