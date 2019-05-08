@@ -96,6 +96,9 @@ export class RecepieEditComponent implements OnInit{
     this.router.navigate(['../',{relativeTo:this.route}]);
     /// console.log("hello checking",this.recepieForm.get('ingredients').controls);
   }
+  onDeleteIngred(index:number){
+      (<FormArray>this.recepieForm.get('ingredients')).removeAt(index); 
+  }
 
 
 
