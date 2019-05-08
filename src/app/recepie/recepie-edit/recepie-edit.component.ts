@@ -86,6 +86,9 @@ export class RecepieEditComponent implements OnInit{
       console.log("add block");
       this.recepieService.addRecepies(recepi);
     }
+
+    this.router.navigate(['../',{relativeTo:this.route}]);
+
   
     console.log(this.recepieForm);
   }

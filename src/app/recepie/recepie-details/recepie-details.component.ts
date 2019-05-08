@@ -44,6 +44,7 @@ export class RecepieDetailsComponent implements OnInit {
   delete(){
     console.log("indele1");
     this.recepieService.deleteRecepie(this.id);
+    this.router.navigate(['/recepie']);
   }
 
 
