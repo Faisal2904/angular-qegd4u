@@ -24,12 +24,14 @@ import{ShoppingService} from './shopping-list/shopping.service';
 import{RecepieService} from './recepie/recepie.service';
 
 import {AppRoutingModule} from './app-routing.module';
+import{DataStorageService} from './shared/data-storage.service';
+
 
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule,AppRoutingModule,ReactiveFormsModule,HttpModule ],
   declarations: [ AppComponent, HelloComponent,HeaderComponent, RecepieComponent, RecepieListComponent, RecepieDetailsComponent ,RecepieItemComponent, ShoppingListComponent, ShoppingEditComponent,DropdownDirective,RecepieStartComponent,RecepieEditComponent],
   bootstrap:    [ AppComponent ],
-  providers:[ShoppingService,RecepieService]
+  providers:[ShoppingService,RecepieService,]
 })
 export class AppModule { }
