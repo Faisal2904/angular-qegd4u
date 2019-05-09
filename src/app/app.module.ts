@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import{HttpModule} from '@angular/http';
 
 import{RouterModule} from '@angular/router';
 
@@ -26,7 +27,7 @@ import {AppRoutingModule} from './app-routing.module';
 
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule,AppRoutingModule,ReactiveFormsModule ],
+  imports:      [ BrowserModule, FormsModule,AppRoutingModule,ReactiveFormsModule,HttpModule ],
   declarations: [ AppComponent, HelloComponent,HeaderComponent, RecepieComponent, RecepieListComponent, RecepieDetailsComponent ,RecepieItemComponent, ShoppingListComponent, ShoppingEditComponent,DropdownDirective,RecepieStartComponent,RecepieEditComponent],
   bootstrap:    [ AppComponent ],
   providers:[ShoppingService,RecepieService]
