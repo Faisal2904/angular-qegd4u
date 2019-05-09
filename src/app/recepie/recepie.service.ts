@@ -24,6 +24,11 @@ export class RecepieService {
 
   constructor(private shoppingService: ShoppingService) { }
 
+  setRecepiesdata(recepies:Recepie[]){
+   this.recepie=recepies;
+   this.recepieChanged.next(this.recepie.slice());
+  }
+
   getRecepie() {
     return this.recepie.slice();
   }

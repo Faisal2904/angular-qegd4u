@@ -8,7 +8,7 @@ import{DataStorageService} from '../shared/data-storage.service';
 })
 export class HeaderComponent  {
 @Output() featureSelected =new EventEmitter<string>();
-  constructor(){}
+  constructor( private dataStorageService:DataStorageService){}
 
   selectOption(feature){
   this.featureSelected.emit(feature);
@@ -16,7 +16,15 @@ export class HeaderComponent  {
   }
   saveData()
   {
+    console.log("in save data");
+     this.dataStorageService.storeRecepies().subscribe(
+       (response)=>{console.log("response", response);},
+       (error)=>{console.log("erroer:",error);}
+     );
+  }
 
+  fetchData(){
+    this.dataStorageService.getRecepies();
   }
  
 }

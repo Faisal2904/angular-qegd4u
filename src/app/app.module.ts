@@ -32,6 +32,6 @@ import{DataStorageService} from './shared/data-storage.service';
   imports:      [ BrowserModule, FormsModule,AppRoutingModule,ReactiveFormsModule,HttpModule ],
   declarations: [ AppComponent, HelloComponent,HeaderComponent, RecepieComponent, RecepieListComponent, RecepieDetailsComponent ,RecepieItemComponent, ShoppingListComponent, ShoppingEditComponent,DropdownDirective,RecepieStartComponent,RecepieEditComponent],
   bootstrap:    [ AppComponent ],
-  providers:[ShoppingService,RecepieService,]
+  providers:[ShoppingService,RecepieService,DataStorageService]
 })
 export class AppModule { }
